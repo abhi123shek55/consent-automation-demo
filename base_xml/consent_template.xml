@@ -1,0 +1,1085 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<survey 
+  alt="CONSENT ONLY TEMPLATE"
+  autosaveKey="RespCode"
+  browserDupes=""
+  builder:wizardCompleted="1"
+  builderCompatible="1"
+  compat="153"
+  delphi="1"
+  displayOnError="all"
+  extraVariables="source,record,decLang,list,userAgent,RespCode,Country"
+  fir="on"
+  html:showNumber="0"
+  mobile="compat"
+  mobileDevices="smartphone,tablet,desktop"
+  name="Survey"
+  remerged="20250821_20:48"
+  secure="1"
+  setup="term,decLang,quota,time"
+  ss:accordionDisplay="0"
+  ss:disableBackButton="1"
+  ss:enableNavigation="1"
+  ss:hideProgressBar="0"
+  ss:logoAlt="Logo"
+  ss:logoFile=""
+  ss:logoPosition="left"
+  state="live"
+  theme="frozen:survey"
+  version="27">
+
+<res label="MR">Please select all that apply.</res>
+<res label="SR">Please select one answer only.</res>
+<res label="GR">Please select an answer for each row.</res>
+<res label="TXT">Please be specific as possible.</res>
+<res label="NUMB">Please enter a number</res>
+<res label="telephone">Please enter 11 digits for MOBILE field.</res>
+<res label="FieldTeam1C">Dear ${hName_GDPR.selected.text},
+<br /><br />
+${Project_Details.r2.val} study has completed by <b>${RespInfo1_GDPR.r1.val}</b> on <b>${dateV.val}</b>.<br /><br />
+Country: ${DM_Country.selected.text}
+<br /><br />
+Thanks!<br />
+Decipher Team</res>
+<res label="emfieldteam1">[pipe: hEmailID_GDPR]</res>
+<res label="email_sender">RESEARCH_COMPANY Research Team, Middle East</res>
+<res label="subjectLine_Interviewer">Completed Consent_Project_Template study</res>
+<res label="privacycontent">Dear ${RespInfo_GDPR.r4.val},<br /><br />Thank you for your interest in our market research study on ${Project_Details.r2.val}.
+<br /><br />
+<div style="text-align:center;"><b>Consent to Processing of Personal Data of Market Research Participant</b></div>
+<br />This form constitutes a privacy notice explaining how (RESEARCH_COMPANY AG) (“RESEARCH_COMPANY”/ “we”, “our”, “us”) will process your personal data for purposes of the Study and a consent declaration form for you to give your consent to this use, should you so choose.
+<br /><br />
+For the purposes of this form, “personal data” means any data relating to you as a person and your personal circumstances, including your contact details, information about your specialization and responses provided in the course of participating in the Study.
+<br /><br />
+If you choose to participate in the Study, you will need to read the following information carefully and provide your consent.
+<br /><br />
+<strong>Purpose of Personal Data Processing:</strong><br />
+RESEARCH_COMPANY will serve as the Controller of personal data collected, and processing of such personal data will relate to conducting the Study and any follow-up contact that you have consented to.
+<br /><br />
+<strong>Third Party Transfers</strong><br />
+In order for RESEARCH_COMPANY to conduct the Study, RESEARCH_COMPANY may need to transfer your data to third party companies providing services to RESEARCH_COMPANY. RESEARCH_COMPANY shall ensure adequate contractual terms are in place with such third parties in order to ensure there are protections for your data.
+<br /><br />
+If such third parties are located outside the EEA which may not benefit from a European Commission adequacy decision, RESEARCH_COMPANY shall ensure Standard Contractual Clauses approved by the European Commission are in place with such third parties in order to ensure an adequate level of protection.<br /><br />
+Your data will not disclosed to the Study sponsor except in aggregated or non-identified form, provided however that your identity may be disclosed to the Study sponsor and the applicable national regulatory authority if you give your consent for your personal details to be passed on in the event of adverse event reporting, or if the Study Sponsor is required to do so by applicable law to meet mandatory regulatory reporting requirements.<br /><br />
+<strong>How we store your information and your rights</strong>
+<br />We retain your data for no longer than is necessary for the purposes for which your personal data is collected. Your responses in the Study and your associated personal data will be maintained for <strong>5 years</strong>.<br /><br />
+You may contact us to request access to your personal data or to be provided with information on your personal data stored by us, object to the processing of it and request that we correct or delete it. If you have any queries or wish to know more about the information we hold, you can [pipe: hPipeDetails_GDPR] or contact our data protection officer mentioning the name of the Study and one of our team will be happy to assist. You also have the right to complain to a data protection authority in the country where you live, work, or where you believe data protection laws have been breached.
+<br /><br />
+The granting of your consent is voluntary and may be revoked at any time without any detrimental effect to you. You will not suffer any detriment should you choose not to participate in the Study.
+<br /><br />
+<strong>Compliance with Anti-Corruption and Anti Bribery Laws:</strong><br />
+You confirm that you are not a Government Official with the ability to influence RESEARCH_COMPANY business and have not taken any action, directly or indirectly, that would constitute a violation of  any applicable law including any anti-corruption laws or regulations (such as FCPA or UKBA), or RESEARCH_COMPANY’s Policy against Bribery and Corruption.
+<br /><br />
+You further confirm that in carrying out the Interview, you have not directly or indirectly made an, offer, authorized, promised to make, or received any Payment:
+<ul><li />to obtain or retain any contract, business opportunity or other similar benefit; or
+<li />to or for the use or benefit of any Government Official; or
+<li />to any person where such Payment violates any laws, decrees, regulations or policies having the force of law in the country or countries of such person or applicable to such person or the laws of (the United States of America and) England and Wales); or ${hPipeDetails.r3.text}
+<li />to or from any person, whether or not a Government Official, with the intention to bring about or reward the improper performance of a duty or obligation to which you are subject to; or with the knowledge or belief that the acceptance of the advantage in itself constitutes the improper performance of your duty or obligation;
+<li />By participating in this study/survey, you confirm that you are authorized to participate without violating any other commitments/engagements/contracts including but not limited to your employment contract/charter/rules and service agreements.
+</ul>
+<strong><em>Following new regulations, we require you to indicate that you have understood and agree to the information above by signing on the project participation sheet.</em></strong></res>
+<res label="NumericErrTelephone">Please enter details in numbers only for TELEPHONE field.</res>
+<res label="NumericErrMobile">Please enter details in numbers only for MOBILE field.</res>
+<samplesources default="0">
+  <samplesource list="0">
+    <title>SCS Links</title>
+    <invalid>You are missing information in the URL. Please verify the URL with the original invite.</invalid>
+    <completed>It seems you have already entered this survey.</completed>
+    <var name="RespCode" unique="1"/>
+    <exit cond="terminated and (SCS_connection_error.r1)">There is an error. Please contact the link provider.</exit>
+    <exit cond="terminated" url="https://example.com/demo-endpoint"/>
+    <exit cond="qualified" url="https://example.com/demo-endpoint"/>
+    <exit cond="overquota" url="https://example.com/demo-endpoint"/>
+  </samplesource>
+
+  <samplesource list="1">
+    <title>Test Link</title>
+    <invalid>You are missing information in the URL. Please verify the URL with the original invite.</invalid>
+    <completed>It seems you have already entered this survey.</completed>
+    <exit cond="terminated">Thank you for taking our survey.</exit>
+    <exit cond="overquota">Thank you for taking our survey.</exit>
+    <exit cond="qualified">Thank you for taking our survey. Your efforts are greatly appreciated!</exit>
+  </samplesource>
+</samplesources>
+
+<style cond="decLang in ['hebrew','arabic','arabic_saudiarabia']" mode="after" name="respview.client.css"><![CDATA[
+<style>
+ body { direction: rtl; }
+ .survey-buttons { text-align: left !important; }
+ #surveyContent, .survey-body, .question-text, .instruction-text,
+ .grid.grid-table-mode .row-legend, .grid-desktop-mode.grid-list-mode .cell-section,
+ .grid-single-col .cell, .grid[data-settings*='single-col'] .cell,
+ .noRows .grid.grid.grid-table-mode .colCount-1 .element,
+ .noRows .grid.grid.grid-table-mode .colCount-1 .col-legend { text-align: right !important; }
+ .survey-body .fir-hidden { left: auto !important; right: -9999px !important; }
+</style>
+]]></style>
+<style label="hideElements" name="question.element"><![CDATA[
+\@if ec.simpleList
+<div class="element $(rowStyle) $(levels) $(extraClasses) 
+${col.group.styles.ss.groupClassNames 
+if col.group 
+else
+ (row.group.styles.ss.groupClassNames if row.group else "")}
+ $(col.styles.ss.colClassNames) $(row.styles.ss.rowClassNames) 
+${"clickableCell" if isClickable else ""}"$(extra)>
+    ${v2_insertStyle('el.label.start')}    
+${v2_insertStyle('el.label.end')}
+</div>
+\@else
+<$(tag) $(headers) class="cell nonempty element $(levels) 
+${"desktop" if this.grouping.cols else "mobile"} border-collapse $(extraClasses) 
+${col.group.styles.ss.groupClassNames 
+if col.group 
+else
+ (row.group.styles.ss.groupClassNames if row.group else "")} 
+$(col.styles.ss.colClassNames) $(row.styles.ss.rowClassNames)
+ ${"clickableCell" if isClickable else ""}"$(extra)> 
+   ${v2_insertStyle('el.label.start')}
+    ${v2_insertStyle('el.label.end')}
+</$(tag)>
+\@endif
+]]></style>
+<suspend/>
+
+<style name="respview.client.css"><![CDATA[
+<style>
+.autosave-restart { display: none; }
+</style>
+]]></style>
+<suspend/>
+
+<style name="respview.client.js"><![CDATA[
+<script>
+jQuery(document).ready(function() {
+$ ('.answers.answers-list').css('margin-left','5%');
+  $ ('.survey-body').css('min-width','99%');
+  
+  $ ('.footer').hide();
+  
+  $ ('.survey-buttons').css('padding-right','14em');
+  $ ('.button').css('background-color','#22bf64');   
+  
+  $ ('#btn_continue').css('width','100px');
+  $ ('#btn_continue').css('height','40px');
+  $ ('#btn_continue').val("Next");
+  $ ('#btn_continue').css('border-radius','10px');   
+  
+  $ ('#btn_goback').css('width','100px');
+  $ ('#btn_goback').css('height','40px');
+  $ ('#btn_goback').css('border-radius','10px');
+  $ ('#btn_goback').val("Back");
+  $ ('#btn_goback').css('color','white');
+     
+  $ ('#btn_randomize').css('width','140px');
+  $ ('#btn_randomize').css('height','40px');
+  $ ('#btn_randomize').css('color','white');
+  $ ('#btn_randomize').css('border-radius','10px');
+   
+  $ ('.survey-error').hide();
+   
+  $ ('.input').css('text-align','center');
+
+  $ ('.input').css('border-width','2px');
+  $ ('.input').css('border-radius','10px');
+  
+/*  $ ('.grid.grid-table-mode .cell').css('border-color','grey'); */
+      
+  $ ('#question_text_Summary').hide();
+ 
+  $ ('.corner').css('background-image','none');
+  $ ('.corner').css('background','#ecf0f1');
+/*  $ ('.corner').remove(); */
+  
+  $ ('.devContainer').css('box-shadow','2px 2px 2px 2px');
+  $ ('.devContainer h3').css('text-align','center');
+  $ ('.devContainer h3').css('color','red');
+  $ ('.devContainer h3').css('font-size','2rem');
+  $ ('.devContainer h3').text("Hi! I will be hidden in live mode, only visible in testing phase.");
+
+  $ ('.question-text').css('max-width','100%');
+  $ ('.question-text').css('padding','5px');
+  $ ('.question-error-text').css('padding','7px');
+
+  $ ('.instruction-text').css('max-width','100%');
+  $ ('.instruction-text').css('font-size','1.5rem');
+  $ ('.instruction-text').css('color','#1fb65e');
+  $ ('.instruction-text').css('font-style','italic');
+  $ ('.instruction-text').css('padding','5px');   
+
+  $ ('.html').css('max-width','98%');
+  
+  $ ('.answers').css('font-size','1.5rem');  
+  $ ('.answers-list').css('width','85%');
+ 
+  $ ('.progress-box-outer').css('width','70%');  
+  $ ('.progress-bar').css('top','4em');
+  $ ('.progress-bar').css('right','4%');
+  $ ('.progress-box-completed').css('background-color','#3986c9');
+  $ ('.progress-box-completed').css('border-radius','10px');
+  $ ('.progress-box-outer').css('border-radius','10px');
+
+  $ ('.question-error').css('max-width','100%');  
+  $ ('.question-error').css('color','red');
+  $ ('.question-error').css('font-size','1.45rem');
+  $ ('.cell.hasError, .answers-list .element.hasError, .element.hasError:hover, .rowLegendErr .oe, .colLegendErr .oe').css('background-color','#ff6666');
+  
+  $ ('.question').css('padding','4px');
+  $ ('.question').css('box-shadow','0px 0px 1px 1px');
+  $ ('.question').css('border-radius','10px');
+/*  $ ('.question').css('background-color','#ecf0f1'); */
+  
+  $ ('.comment').css('padding','12px');
+  $ ('.comment').css('box-shadow','2px 2px 2px 2px');
+  $ ('.comment').css('border-radius','10px');
+  $ ('.comment-text').css('max-width','100%');  
+   
+  });
+</script>
+]]></style>
+<suspend/>
+
+<block label="screen_out_system" builder:title="Screen out system">
+  <text 
+   label="DM_enable_reinviting"
+   randomize="0"
+   size="25"
+   where="execute,survey,report">
+    <title>New Text Question</title>
+    <comment>Be specific</comment>
+  </text>
+</block>
+
+<suspend/>
+
+<exec cond="(list=='0')" sst="0">
+p.send_data = dict(c=RespCode)
+p.header_info = dict(access_token="REPLACE_WITH_ACCESS_TOKEN")
+</exec>
+
+<suspend/>
+
+<logic label="ln1" cond="0" api:headers="p.header_info" api:params="p.send_data" api:url="https://example.com/demo-endpoint" uses="api.1">
+  <title>API Integration</title></logic>
+<suspend/>
+
+<exec cond="(list=='0')" sst="0">
+if ln1.status == 200 and ln1.r["cod"] == 200:
+  country.val = ln1.r["Country"]
+  language.val = ln1.r["MebosPrimaryLanguage"]
+  MebosID.val = ln1.r["MebosID"]
+  WebsysCode.val = ln1.r["WebsysCode"]
+  Specialty.val = ln1.r["MebosCategory"].encode('utf-8')
+  DecipherLanguage.val = ln1.r["decipherLang"]
+  LOI.val = ln1.r["MEBOS_Length_of_Interview"]
+  Incentive.val = ln1.r["IncentiveValue"]
+  MebosRegion.val = ln1.r["MebosRegion"].encode('utf-8')
+  Projectid.val = ln1.r["MEBOSProjectID"].encode('utf-8')
+  LinkBackDataRaw.val = ln1.r["LinkBackDataRaw"]
+  VerificationAPI.val = ln1.r["VerificationAPI"]
+  VerificationURL.val = ln1.r["VerificationURL"]
+  gotoAfterContractFR.val = 0  
+  if ln1.r["ExternalID"] != "":
+    externalid = ln1.r["ExternalID"]
+    int1 = len(externalid)
+    first = externalid[0]
+    if ((int1 == 12 or int1 == 14) and first == "W"):
+      OneKeyID.val = ln1.r["ExternalID"]
+    else:
+      ExternalID.val = ln1.r["ExternalID"]
+  else:
+    ExternalID.val = "Not specified"
+    OneKeyID.val = "Not specified"
+  if "MEBOS_extended_properties_raw" in ln1.r.keys():
+    extended_properties = ln1.r["MEBOS_extended_properties_raw"]
+    if "ME Category" in extended_properties.keys():
+      Extended_Properties_Value.val = extended_properties["ME Category"]
+    else:
+      Extended_Properties_Value.val = "not specify"
+  else:
+    Extended_Properties_Value.val = "not specify"
+</exec>
+
+<suspend/>
+
+<radio 
+  label="SCS_connection_error"
+  cond="(list=='0') and not gv.isUser()"
+  optional="1"
+  sst="0"
+  where="execute,survey,report">
+  <title>SCS Connection error</title>
+  <exec>
+if ln1.status != 200 or ln1.r["cod"] != 200:
+  SCS_connection_error.val = SCS_connection_error.r1.index
+else:
+  SCS_connection_error.val = SCS_connection_error.r2.index
+  </exec>
+
+  <row label="r1">Yes</row>
+  <row label="r2">No</row>
+</radio>
+
+<suspend/>
+
+<term label="term_SCS_connection_error" cond="(SCS_connection_error.r1)" sst="0">SCS connection error</term>
+
+<suspend/>
+
+<exec cond="not(gv.survey.root.state.live)">
+country.val = Country
+</exec>
+
+<suspend/>
+
+<block label="MEBOS_BLOCK" cond="(list=='0')" builder:title="Mebos data">
+  <text 
+   label="country"
+   randomize="0"
+   size="25"
+   where="execute,survey,report">
+    <title>Country</title>
+  </text>
+
+  <text 
+   label="language"
+   randomize="0"
+   size="25"
+   where="execute,survey,report">
+    <title>Language</title>
+  </text>
+
+  <text 
+   label="MebosID"
+   randomize="0"
+   size="25"
+   where="execute,survey,report">
+    <title>Mebos ID</title>
+  </text>
+
+  <text 
+   label="WebsysCode"
+   randomize="0"
+   size="25"
+   where="execute,survey,report">
+    <title>Websyscode</title>
+  </text>
+
+  <text 
+   label="Specialty"
+   randomize="0"
+   size="25"
+   where="execute,survey,report">
+    <title>Specialty</title>
+  </text>
+
+  <text 
+   label="DecipherLanguage"
+   size="25"
+   where="execute,survey,report">
+    <title>Decipher Language</title>
+  </text>
+
+  <text 
+   label="LOI"
+   size="25"
+   where="execute,survey,report">
+    <title>Length of Interview</title>
+  </text>
+
+  <text 
+   label="Incentive"
+   size="25"
+   where="execute,survey,report">
+    <title>Incentive value</title>
+  </text>
+
+  <text 
+   label="MebosRegion"
+   size="25"
+   where="execute,survey,report">
+    <title>Mebos Region</title>
+  </text>
+
+  <text 
+   label="ExternalID"
+   size="25"
+   where="execute,survey,report">
+    <title>ExternalID</title>
+  </text>
+
+  <text 
+   label="OneKeyID"
+   size="25"
+   where="execute,survey,report">
+    <title>OneKeyID</title>
+  </text>
+
+  <text 
+   label="Projectid"
+   size="25"
+   where="execute,survey,report">
+    <title>Project id</title>
+  </text>
+
+  <text 
+   label="LinkBackDataRaw"
+   size="25"
+   where="execute,survey,report">
+    <title>LinkBackDataRaw</title>
+  </text>
+
+  <text 
+   label="VerificationURL"
+   size="25"
+   where="execute,survey,report">
+    <title>VerificationURL</title>
+    <comment>Be specific</comment>
+  </text>
+
+  <text 
+   label="VerificationAPI"
+   size="25"
+   where="execute,survey,report">
+    <title>VerificationAPI</title>
+  </text>
+
+  <text 
+   label="gotoAfterContractFR"
+   size="25"
+   where="execute,survey,report">
+    <title>This question make sure that the user don't run the autosaveRestored function until the user reached the the contract. After the contract it will be set to 0 again</title>
+  </text>
+
+  <text 
+   label="Extended_Properties_Value"
+   size="25"
+   where="execute,survey,report">
+    <title>Extended Properties Value</title>
+  </text>
+</block>
+
+<suspend/>
+
+<block label="Country_Lang" cond="(list=='0')" builder:title="Set Country and Language">
+  <exec>
+#if not country.empty:
+#  setExtra("Country",country.val)
+  </exec>
+
+  <radio 
+   label="DM_Country"
+   libraryElementID="CMvvpacQ"
+   optional="1"
+   randomize="0"
+   sst="0"
+   where="execute,survey,report">
+    <title>DM CountrySplit</title>
+    <comment>Select one</comment>
+    <exec>
+if not country.empty:   
+  DM_Country.val = DM_Country.attr(country.val).index
+    </exec>
+
+    <row label="DE">Germany</row>
+    <row label="ES">Spain</row>
+    <row label="FR">France</row>
+    <row label="GB">United Kingdom</row>
+    <row label="IT">Italy</row>
+    <row label="NL">Netherlands</row>
+    <row label="BE">Belgium</row>
+    <row label="CH">Switzerland</row>
+    <row label="AT">Austria</row>
+    <row label="PT">Portugal</row>
+    <row label="IE">Ireland</row>
+    <row label="DK">Denmark</row>
+    <row label="SE">Sweden</row>
+    <row label="NO">Norway</row>
+    <row label="FI">Finland</row>
+    <row label="PL">Poland</row>
+    <row label="RO">Romania</row>
+    <row label="BG">Bulgaria</row>
+    <row label="HU">Hungary</row>
+    <row label="GR">Greece</row>
+    <row label="TR">Turkey</row>
+    <row label="CZ">Czechoslovakia</row>
+    <row label="SK">Slovakia</row>
+    <row label="CA">Canada</row>
+    <row label="US">United States of America</row>
+    <row label="BR">Brazil</row>
+    <row label="AG">Antigua and Barbuda</row>
+    <row label="CO">Colombia</row>
+    <row label="CL">Chile</row>
+    <row label="MX">Mexico</row>
+    <row label="JP">Japan</row>
+    <row label="HR">Croatia</row>
+    <row label="RS">Serbia</row>
+    <row label="RU">Russia</row>
+    <row label="AE">UAE</row>
+    <row label="KW">Kuwait</row>
+    <row label="QA">Qatar</row>
+    <row label="AR">Argentina</row>
+    <row label="PE">Peru</row>
+    <row label="SA">KSA</row>
+    <row label="EG">Egypt</row>
+    <row label="JO">Jordan</row>
+    <row label="MA">Morocco</row>
+    <row label="TW">Taiwan</row>
+    <row label="LB">Lebanon</row>
+    <row label="BH">Bahrain</row>
+    <row label="OM">Oman</row>
+  </radio>
+
+  <radio 
+   label="vCountry"
+   libraryElementID="CMvvpacQ"
+   optional="1"
+   randomize="0"
+   sst="0"
+   where="execute,survey,report">
+    <title>CountrySplit</title>
+    <comment>Select one</comment>
+    <exec>
+if not country.empty:
+  setExtra("Country",country.val)   
+  vCountry.val = vCountry.attr(country.val).index
+    </exec>
+
+    <row label="DE">Germany</row>
+    <row label="ES">Spain</row>
+    <row label="FR">France</row>
+    <row label="GB">United Kingdom</row>
+    <row label="IT">Italy</row>
+    <row label="NL">Netherlands</row>
+    <row label="BE">Belgium</row>
+    <row label="CH">Switzerland</row>
+    <row label="AT">Austria</row>
+    <row label="PT">Portugal</row>
+    <row label="IE">Ireland</row>
+    <row label="DK">Denmark</row>
+    <row label="SE">Sweden</row>
+    <row label="NO">Norway</row>
+    <row label="FI">Finland</row>
+    <row label="PL">Poland</row>
+    <row label="RO">Romania</row>
+    <row label="BG">Bulgaria</row>
+    <row label="HU">Hungary</row>
+    <row label="GR">Greece</row>
+    <row label="TR">Turkey</row>
+    <row label="CZ">Czechoslovakia</row>
+    <row label="SK">Slovakia</row>
+    <row label="CA">Canada</row>
+    <row label="US">United States of America</row>
+    <row label="BR">Brazil</row>
+    <row label="AG">Antigua and Barbuda</row>
+    <row label="CO">Colombia</row>
+    <row label="CL">Chile</row>
+    <row label="MX">Mexico</row>
+    <row label="JP">Japan</row>
+    <row label="HR">Croatia</row>
+    <row label="RS">Serbia</row>
+    <row label="RU">Russia</row>
+    <row label="AE">UAE</row>
+    <row label="KW">Kuwait</row>
+    <row label="QA">Qatar</row>
+    <row label="AR">Argentina</row>
+    <row label="PE">Peru</row>
+    <row label="SA">KSA</row>
+    <row label="EG">Egypt</row>
+    <row label="JO">Jordan</row>
+    <row label="MA">Morocco</row>
+    <row label="TW">Taiwan</row>
+    <row label="LB">Lebanon</row>
+    <row label="BH">Bahrain</row>
+    <row label="OM">Oman</row>
+  </radio>
+</block>
+
+<suspend/>
+
+<term label="term_list_1_only_draft" cond="list == '1' and gv.survey.root.state.live">This link (list 1) can be used only for testing Draft</term>
+
+<suspend/>
+
+<exec cond="0" sst="0">
+if not DecipherLanguage.empty:
+  try:
+    langB=DecipherLanguage.val.lower()
+    setLanguage(langB)
+    setExtra("decLang",langB)
+  except:
+    DecipherLanguage.val= decLang 
+
+else:
+  DecipherLanguage.val= decLang
+</exec>
+
+<suspend/>
+
+<radio 
+  label="Language_selection"
+  cond="0"
+  where="survey,report,notdp">
+  <title>Please select the language you would like to take this survey in.</title>
+  <row label="r1">English</row>
+  <row label="r2">Arabic</row>
+</radio>
+
+<suspend/>
+
+<exec cond="0" sst="0">
+langB="english"
+
+if Language_selection.r2:
+  langB="arabic_saudiarabia"
+
+setLanguage(langB) 
+setExtra("decLang",langB)
+</exec>
+
+<suspend/>
+
+<exec>
+if list=='1':
+  country.val = Country
+  DM_Country.val = DM_Country.attr(country.val).index
+
+p.respincentive = 0
+p.respcategory = ""
+p.resploi = 0
+
+#Uncomment this script if there's requirement from field team regarding incentive which can't be passed thru ODIN and add condition if list == '0'
+
+#LOI.val = "90 minutes"
+#LOI.val = "60 + 2 PRFs"
+#LOI.val = "30 + 2 PRFs"
+
+#For testing purpose please enter incentive and LOI to this persistent variable however, at the time of live it will directly fetch from question
+
+if list == '1':
+	p.respincentive = 215
+	p.resploi = 90
+	
+# This will fetch value from actual question in live survey
+
+if list == '0' and gv.survey.root.state.live:
+	p.respincentive = Incentive.val
+	p.resploi = LOI.val
+
+
+#Script to punch Name and Contact number + Email id for Field team POC for piping purpose. 
+
+#if DM_Country.AE:
+#	hName_GDPR.val = hName_GDPR.r1.index
+#	hPipeDetails_GDPR.val = hPipeDetails_GDPR.r1.index
+</exec>
+
+<suspend/>
+
+<radio 
+  label="hName_GDPR"
+  optional="1"
+  where="execute,survey,notdp">
+  <title>Hidden question to pipe name.</title>
+  <row label="r1">Contact 1</row>
+  <row label="r2">Contact 2</row>
+  <row label="r3">Contact 3</row>
+  <row label="r4">Contact 4</row>
+  <row label="r5">Contact 5</row>
+  <row label="r6">Contact 6</row>
+  <row label="r7">Contact 7</row>
+</radio>
+
+<radio 
+  label="hPipeDetails_GDPR"
+  optional="1"
+  where="execute,survey,notdp">
+  <title>Hidden question to pipe name.</title>
+  <row label="r1">call at [CONTACT_PHONE] or email us on <a href="mailto:contact1@example.com">contact1@example.com</a></row>
+  <row label="r2">call at [CONTACT_PHONE] or email us on <a href="mailto:contact2@example.com">contact2@example.com</a></row>
+  <row label="r3">call at [CONTACT_PHONE] or email us on <a href="mailto:contact3@example.com">contact3@example.com</a></row>
+  <row label="r4">call at [CONTACT_PHONE] or email us on <a href="mailto:contact4@example.com">contact4@example.com</a></row>
+  <row label="r5">call at [CONTACT_PHONE] or email us on <a href="mailto:contact5@example.com">contact5@example.com</a></row>
+  <row label="r6">call at [CONTACT_PHONE] or email us on <a href="mailto:contact6@example.com">contact6@example.com</a></row>
+  <row label="r7">call at [CONTACT_PHONE] or email us on <a href="mailto:contact7@example.com">contact7@example.com</a></row>
+</radio>
+
+<suspend/>
+
+<exec>
+if not(hPipeDetails_GDPR.empty):
+	hEmailID_GDPR.val = hPipeDetails_GDPR.selected.index
+</exec>
+
+<suspend/>
+
+<radio 
+  label="hEmailID_GDPR"
+  optional="1"
+  where="execute,survey,report">
+  <title>Hidden question to punch email id based on field team POC for particular country.</title>
+  <row label="r1">contact1@example.com</row>
+  <row label="r2">contact2@example.com</row>
+  <row label="r3">contact3@example.com</row>
+  <row label="r4">contact4@example.com</row>
+  <row label="r5">contact5@example.com</row>
+  <row label="r6">contact6@example.com</row>
+  <row label="r7">contact7@example.com</row>
+</radio>
+
+<suspend/>
+
+<radio 
+  label="hPipeDetails"
+  optional="1"
+  where="execute,survey,report">
+  <title>Hidden question to pipe details in further details.</title>
+  <row label="r1">Project Number - PN12345</row>
+  <row label="r2">Consent_Project_Template</row>
+  <row label="r3">[pipe: DM_Country]</row>
+  <row label="r4">${Specialty.val}</row>
+</radio>
+
+<suspend/>
+
+<quota label="quo1" overquota="noqual" sheet="Total"/>
+
+<suspend/>
+
+<text 
+  label="Project_Details"
+  size="60"
+  ss:listDisplay="0">
+  <title><b>PROJECT DETAILS</b></title>
+  <exec>
+Project_Details.r1.val = hPipeDetails.r1.text
+Project_Details.r2.val = hPipeDetails.r2.text
+  </exec>
+
+  <style name="question.after"><![CDATA[
+<script>
+  $ (document).ready(function() {
+$ ("div.question").find('tbody:eq(0) > tr:eq(1)').find("input[type='text']").css("background-color","lightgrey") 
+$ ("div.question").find('tbody:eq(0) > tr:eq(1)').find("input[type='text']").attr("disabled","disabled")
+
+$ ("div.question").find('tbody:eq(0) > tr:eq(2)').find("input[type='text']").css("background-color","lightgrey") 
+$ ("div.question").find('tbody:eq(0) > tr:eq(2)').find("input[type='text']").attr("disabled","disabled")
+
+});
+  </script>
+]]></style>
+  <row label="r1">PROJECT NUMBER</row>
+  <row label="r2">PROJECT NAME</row>
+</text>
+
+<suspend/>
+
+<text 
+  label="RespInfo1_GDPR"
+  optional="0"
+  size="60"
+  ss:listDisplay="0">
+  <title><b>RESPONDENT DETAILS</b></title>
+  <exec>
+RespInfo1_GDPR.r5.val = hPipeDetails.r3.text
+RespInfo1_GDPR.r4.val = hPipeDetails.r4.text
+  </exec>
+
+  <validate>
+if RespInfo1_GDPR.r3.val.isdigit():
+	digitsList = [int(i) for i in str(RespInfo1_GDPR.r3.val)]
+	lenDigits = len(digitsList)
+	if ((lenDigits &gt; 10) or (lenDigits &lt; 10)):
+		error("Please enter 10 digits for Mobile field.")
+  </validate>
+
+  <style name="question.after"><![CDATA[
+<script>
+  $ (document).ready(function() {
+
+$ ("div.question").find('tbody:eq(0) > tr:eq(4)').find("input[type='text']").css("background-color","lightgrey") 
+$ ("div.question").find('tbody:eq(0) > tr:eq(4)').find("input[type='text']").attr("disabled","disabled")
+
+$ ("div.question").find('tbody:eq(0) > tr:eq(5)').find("input[type='text']").css("background-color","lightgrey") 
+$ ("div.question").find('tbody:eq(0) > tr:eq(5)').find("input[type='text']").attr("disabled","disabled")
+
+});
+
+  </script>
+]]></style>
+  <row label="r1">Physician's name</row>
+  <row label="r2">Hospital/Clinic Address</row>
+  <row label="r3" verify="number">Mobile number</row>
+  <row label="r4" optional="1">Specialty</row>
+  <row label="r5" optional="1">Country</row>
+  <row label="r6">City</row>
+</text>
+
+<select 
+  label="Sector"
+  below="RespInfo1_GDPR"
+  keepWith="RespInfo1_GDPR"
+  ss:listDisplay="0">
+  <title>&amp;nbsp;</title>
+  <row label="r1">Private/ Public</row>
+  <choice label="ch1">Public</choice>
+  <choice label="ch2">Private</choice>
+</select>
+
+<suspend/>
+
+<exec>
+Project_Details.r1.val = hPipeDetails.r1.text
+Project_Details.r2.val = hPipeDetails.r2.text
+RespInfo1_GDPR.r5.val = hPipeDetails.r3.text
+RespInfo1_GDPR.r4.val = hPipeDetails.r4.text
+</exec>
+
+<suspend/>
+
+<radio 
+  label="S0"
+  atm1d:showInput="0"
+  atm1d:viewMode="tiled"
+  ss:listDisplay="1"
+  uses="atm1d.11">
+  <title>Good morning/afternoon, I am contacting on behalf of RESEARCH_COMPANY, an independent international healthcare market research organization. We are conducting a study on <b>${hPipeDetails.r2.text}</b> and would like to speak to a small number of physicians here in ${hPipeDetails.r3.text} about this subject.<br /><br />
+  The purpose of our study is to discuss Name of the project. The discussion will be virtual or face to face and will last for about <strong>${p.resploi} minutes</strong>. The discussion will be arranged at a time to suit you and we can offer <strong>${p.respincentive} USD</strong>.<br /><br />
+  Please let me reassure you that this Market Research is sponsored by a company and is conducted in accordance with International Market Research guidelines. The research is not designed to be promotional in any way – we are not trying to sell you anything. You have a right to withdraw from the interview at any time and withhold information as you see fit. All information provided will be treated in the strictest confidence and all data will only reported in a consolidated form – no personal information (including your name, email address and phone number) will be included in any reports provided to the company sponsoring the research, or to their affiliated companies or business partners.<br /><br />
+  Based on the (above) information, would you be interested in taking part in this market research program?
+  </title>
+  <comment>${res.SR}</comment>
+  <row label="r1">Yes</row>
+  <row label="r2">No</row>
+</radio>
+
+<suspend/>
+
+<term label="te0" cond="S0.r2">S0: Code 2 - No is selected</term>
+
+<suspend/>
+
+<radio 
+  label="S1"
+  atm1d:showInput="0"
+  atm1d:viewMode="tiled"
+  ss:listDisplay="1"
+  uses="atm1d.11">
+  <title>As I mentioned earlier, we would be pleased to offer a <b>${p.respincentive} USD</b> in appreciation of your time and participation in the study. This compensation will be provided through our international payment system called ODIN.
+<br /><br />
+Do you agree to receive compensation in this method?</title>
+  <comment>${res.SR}</comment>
+  <row label="r1">Yes</row>
+  <row label="r2">No</row>
+</radio>
+
+<term label="te1" cond="S1.r2">S1: Code 2 - No is selected</term>
+
+<suspend/>
+
+<radio 
+  label="S2"
+  atm1d:showInput="0"
+  atm1d:viewMode="tiled"
+  ss:listDisplay="1"
+  uses="atm1d.11">
+  <title>I am going to audio record our discussion, because I cannot possibly remember everything that is said or write it down. However, as I mentioned earlier the meeting is completely confidential. The recordings will be listened to by an analyst who will summarise the data for confidential reporting purposes.<br /><br />
+Do you agree to audio recording of the interview?</title>
+  <comment>${res.SR}</comment>
+  <row label="r1">Yes</row>
+  <row label="r2">No</row>
+</radio>
+
+<suspend/>
+
+<term label="te2" cond="S2.r2">S2: Code 2 - No is selected</term>
+
+<suspend/>
+
+<radio 
+  label="S3"
+  atm1d:showInput="0"
+  atm1d:viewMode="tiled"
+  ss:listDisplay="1"
+  uses="atm1d.11">
+  <title>It may also be necessary at a future date to re-contact you if we have a query on any of the information you have provided for our analysis.<br /><br />
+Do you agree to be re-contacted in case of a query?</title>
+  <comment>${res.SR}</comment>
+  <row label="r1">Yes</row>
+  <row label="r2">No</row>
+</radio>
+
+<suspend/>
+
+<radio 
+  label="AdverseEvents"
+  atm1d:showInput="0"
+  atm1d:viewMode="tiled"
+  ss:listDisplay="1"
+  uses="atm1d.11">
+  <title><strong>Adverse Events</strong><br />We are now being asked to pass on to our client details of adverse events that are mentioned during market research interviews. Although what you say will of course be treated in confidence, should you raise an adverse event during the discussion we will need to report this even if it has already been reported by you directly to the company or regulatory authorities. In such a situation you will be asked whether you are willing to waive the confidentiality given to you using the market research codes of conduct specifically in relation to that adverse event. Everything else you say during the interview will continue to remain confidential, and you will still have the option to remain anonymous if you so wish.
+<br />Do you agree with the above AE statement?</title>
+  <comment>${res.SR}</comment>
+  <row label="r1">Yes</row>
+  <row label="r2">No</row>
+</radio>
+
+<suspend/>
+
+<html label="IntroConsent" where="survey"><div style="text-align:center;"><b>Consent to Processing of Personal Data of Market Research Participant</b></div>
+<br />This form constitutes a privacy notice explaining how (RESEARCH_COMPANY AG) (“RESEARCH_COMPANY”/ “we”, “our”, “us”) will process your personal data for purposes of the Study and a consent declaration form for you to give your consent to this use, should you so choose.
+<br /><br />
+For the purposes of this form, “personal data” means any data relating to you as a person and your personal circumstances, including your contact details, information about your specialization and responses provided in the course of participating in the Study.
+<br /><br />
+If you choose to participate in the Study, you will need to read the following information carefully and provide your consent.
+<br /><br />
+<strong>Purpose of Personal Data Processing:</strong><br />
+RESEARCH_COMPANY will serve as the Controller of personal data collected, and processing of such personal data will relate to conducting the Study and any follow-up contact that you have consented to.
+<br /><br />
+<strong>Third Party Transfers</strong><br />
+In order for RESEARCH_COMPANY to conduct the Study, RESEARCH_COMPANY may need to transfer your data to third party companies providing services to RESEARCH_COMPANY. RESEARCH_COMPANY shall ensure adequate contractual terms are in place with such third parties in order to ensure there are protections for your data.
+<br /><br />
+If such third parties are located outside the EEA which may not benefit from a European Commission adequacy decision, RESEARCH_COMPANY shall ensure Standard Contractual Clauses approved by the European Commission are in place with such third parties in order to ensure an adequate level of protection.<br /><br />
+Your data will not disclosed to the Study sponsor except in aggregated or non-identified form, provided however that your identity may be disclosed to the Study sponsor and the applicable national regulatory authority if you give your consent for your personal details to be passed on in the event of adverse event reporting, or if the Study Sponsor is required to do so by applicable law to meet mandatory regulatory reporting requirements.<br /><br />
+<strong>How we store your information and your rights</strong>
+<br />We retain your data for no longer than is necessary for the purposes for which your personal data is collected. Your responses in the Study and your associated personal data will be maintained for <strong>5 years</strong>.<br /><br />
+You may contact us to request access to your personal data or to be provided with information on your personal data stored by us, object to the processing of it and request that we correct or delete it. If you have any queries or wish to know more about the information we hold, you can [pipe: hPipeDetails_GDPR] or contact our data protection officer mentioning the name of the Study and one of our team will be happy to assist. You also have the right to complain to a data protection authority in the country where you live, work, or where you believe data protection laws have been breached.
+<br /><br />
+The granting of your consent is voluntary and may be revoked at any time without any detrimental effect to you. You will not suffer any detriment should you choose not to participate in the Study.
+<br /><br />
+<strong>Compliance with Anti-Corruption and Anti Bribery Laws:</strong><br />
+You confirm that you are not a Government Official with the ability to influence RESEARCH_COMPANY business and have not taken any action, directly or indirectly, that would constitute a violation of  any applicable law including any anti-corruption laws or regulations (such as FCPA or UKBA), or RESEARCH_COMPANY’s Policy against Bribery and Corruption.
+<br /><br />
+You further confirm that in carrying out the Interview, you have not directly or indirectly made an, offer, authorized, promised to make, or received any Payment:
+<ul><li />to obtain or retain any contract, business opportunity or other similar benefit; or
+<li />to or for the use or benefit of any Government Official; or
+<li />to any person where such Payment violates any laws, decrees, regulations or policies having the force of law in the country or countries of such person or applicable to such person or the laws of (the United States of America and) England and Wales); or ${hPipeDetails.r3.text}
+<li />to or from any person, whether or not a Government Official, with the intention to bring about or reward the improper performance of a duty or obligation to which you are subject to; or with the knowledge or belief that the acceptance of the advantage in itself constitutes the improper performance of your duty or obligation;
+<li />By participating in this study/survey, you confirm that you are authorized to participate without violating any other commitments/engagements/contracts including but not limited to your employment contract/charter/rules and service agreements.
+</ul>
+<strong><em>Following new regulations, we require you to indicate that you have understood and agree to the information above by signing on the project participation sheet.</em></strong></html>
+
+<suspend/>
+
+<text 
+  label="RespInfo_GDPR"
+  optional="0"
+  size="60"
+  ss:listDisplay="0"
+  sst="0">
+  <title><i>PLEASE COMPLETE DETAILS ACCURATELY AS THIS INFORMATION WILL BE USED TO PROCESS THE PAYMENT.</i></title>
+  <exec>
+RespInfo_GDPR.r1.val = hPipeDetails.r1.text
+RespInfo_GDPR.r2.val = hPipeDetails.r2.text
+RespInfo_GDPR.r6.val = hPipeDetails.r3.text
+from datetime import date
+today=date.today()
+RespInfo_GDPR.r3.val = today.strftime("%d/%m/%y")
+RespInfo_GDPR.r4.val = RespInfo1_GDPR.r1.val
+RespInfo_GDPR.r5.val = RespInfo1_GDPR.r4.val
+RespInfo_GDPR.r7.val = RespInfo1_GDPR.r6.val
+RespInfo_GDPR.r8.val = RespInfo1_GDPR.r2.val
+RespInfo_GDPR.r9.val = RespInfo1_GDPR.r3.val
+  </exec>
+
+  <style name="question.after"><![CDATA[
+<script>
+  $ (document).ready(function() {
+$ ("div.question").find('tbody:eq(0) > tr:eq(1)').find("input[type='text']").css("background-color","lightgrey") 
+$ ("div.question").find('tbody:eq(0) > tr:eq(1)').find("input[type='text']").attr("disabled","disabled")
+
+$ ("div.question").find('tbody:eq(0) > tr:eq(2)').find("input[type='text']").css("background-color","lightgrey") 
+$ ("div.question").find('tbody:eq(0) > tr:eq(2)').find("input[type='text']").attr("disabled","disabled")
+
+$ ("div.question").find('tbody:eq(0) > tr:eq(3)').find("input[type='text']").css("background-color","lightgrey") 
+$ ("div.question").find('tbody:eq(0) > tr:eq(3)').find("input[type='text']").attr("disabled","disabled")
+
+$ ("div.question").find('tbody:eq(0) > tr:eq(4)').find("input[type='text']").css("background-color","lightgrey") 
+$ ("div.question").find('tbody:eq(0) > tr:eq(4)').find("input[type='text']").attr("disabled","disabled")
+
+$ ("div.question").find('tbody:eq(0) > tr:eq(5)').find("input[type='text']").css("background-color","lightgrey") 
+$ ("div.question").find('tbody:eq(0) > tr:eq(5)').find("input[type='text']").attr("disabled","disabled")
+
+$ ("div.question").find('tbody:eq(0) > tr:eq(6)').find("input[type='text']").css("background-color","lightgrey") 
+$ ("div.question").find('tbody:eq(0) > tr:eq(6)').find("input[type='text']").attr("disabled","disabled")
+
+
+$ ("div.question").find('tbody:eq(0) > tr:eq(7)').find("input[type='text']").css("background-color","lightgrey") 
+$ ("div.question").find('tbody:eq(0) > tr:eq(7)').find("input[type='text']").attr("disabled","disabled")
+
+$ ("div.question").find('tbody:eq(0) > tr:eq(8)').find("input[type='text']").css("background-color","lightgrey") 
+$ ("div.question").find('tbody:eq(0) > tr:eq(8)').find("input[type='text']").attr("disabled","disabled")
+
+$ ("div.question").find('tbody:eq(0) > tr:eq(9)').find("input[type='text']").css("background-color","lightgrey") 
+$ ("div.question").find('tbody:eq(0) > tr:eq(9)').find("input[type='text']").attr("disabled","disabled")
+});
+
+  </script>
+]]></style>
+  <row label="r1" optional="1">PROJECT NUMBER</row>
+  <row label="r2" optional="1">PROJECT NAME</row>
+  <row label="r3" optional="1">DATE OF INTERVIEW</row>
+  <row label="r4" optional="1">DOCTOR NAME</row>
+  <row label="r5" optional="1">SPECIALITY</row>
+  <row label="r6" optional="1">COUNTRY</row>
+  <row label="r7" optional="1">CITY</row>
+  <row label="r8" optional="1">HOSPITAL/CLINIC NAME</row>
+  <row label="r9" optional="1">MOBILE</row>
+  <row label="r10" verify="email">E-MAIL ADDRESS</row>
+</text>
+
+<checkbox 
+  label="Consent3"
+  atleast="3">
+  <title><b>PARTICIPANT CONSENT:</b></title>
+  <row label="r1"><b>YES</b>, I want to take part in the Study as outlined above and confirm my consent to the collection, storage and use of my personal data as outlined above.</row>
+  <row label="r2"><b>YES</b>, I confirm that I may be contacted by RESEARCH_COMPANY directly by telephone or e-mail using the contact information I have given above.</row>
+  <row label="r3"><b>YES</b>, I have complied with anti-corruption and anti-bribery laws.</row>
+</checkbox>
+
+<suspend/>
+
+<exec>
+RespInfo_GDPR.r1.val = hPipeDetails.r1.text
+RespInfo_GDPR.r2.val = hPipeDetails.r2.text
+RespInfo_GDPR.r6.val = hPipeDetails.r3.text
+from datetime import date
+today=date.today()
+RespInfo_GDPR.r3.val = today.strftime("%d/%m/%y")
+RespInfo_GDPR.r4.val = RespInfo1_GDPR.r1.val
+RespInfo_GDPR.r5.val = RespInfo1_GDPR.r4.val
+RespInfo_GDPR.r7.val = RespInfo1_GDPR.r6.val
+RespInfo_GDPR.r8.val = RespInfo1_GDPR.r2.val
+RespInfo_GDPR.r9.val = RespInfo1_GDPR.r3.val
+</exec>
+
+<suspend/>
+
+<text 
+  label="dateV"
+  optional="0"
+  size="25"
+  where="execute,survey,report">
+  <title>Date</title>
+  <exec>
+from datetime import date
+today=date.today()
+dateV.val = today.strftime("%d/%m/%y")
+  </exec>
+
+</text>
+
+<suspend/>
+
+<exec>
+from datetime import date
+today=date.today()
+dateV.val = today.strftime("%d/%m/%y")
+</exec>
+
+<suspend/>
+
+<logic label="lFieldTeam" cond="0" email:company="RESEARCH_COMPANY" email:content="${res.FieldTeam1C}" email:recipient="${res.emfieldteam1}" email:reply="contact8@example.com" email:sender="${res.email_sender}" email:subject="${res.subjectLine_Interviewer}" uses="email.1">
+  <title>Send an email to Field team</title></logic>
+<logic label="lRespondentEnglish" cond="0" email:company="RESEARCH_COMPANY" email:content="${res.privacycontent}" email:recipient="${RespInfo_GDPR.r10.val}" email:reply="contact8@example.com" email:sender="${res.email_sender}" email:subject="${res.subjectLine_Interviewer}" uses="email.1">
+  <title>Send an email to Respondent</title></logic></survey>

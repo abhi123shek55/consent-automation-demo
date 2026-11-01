@@ -1,0 +1,249 @@
+:root {
+    --primary-color: #0066cc;
+    --primary-hover: #0052a3;
+    --success-color: #28a745;
+    --success-hover: #218838;
+    --bg-color: #f0f2f5;
+    --card-bg: #ffffff;
+    --text-main: #2c3e50;
+    --text-secondary: #546e7a;
+    --border-color: #dfe3e8;
+    --input-border: #cfd8dc;
+    --header-height: 70px;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-size: 16px; /* Requested larger font */
+}
+
+/* --- Navbar --- */
+.navbar {
+    height: var(--header-height);
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    padding: 0 2.5rem;
+    flex-shrink: 0;
+    z-index: 10;
+}
+
+.navbar .brand { font-size: 1.6rem; font-weight: 700; color: var(--primary-color); }
+.navbar .tagline {
+    font-size: 1rem; color: var(--text-secondary);
+    margin-left: 20px; padding-left: 20px; border-left: 2px solid var(--border-color);
+}
+
+/* --- Main Container --- */
+.app-container {
+    flex: 1;
+    padding: 2rem 3rem;
+    width: 100%;
+    box-sizing: border-box;
+    height: calc(100vh - var(--header-height));
+    max-width: 2200px;
+    margin: 0 auto;
+}
+
+#consent-form { height: 100%; }
+
+/* --- THE 50/50 SPLIT LAYOUT --- */
+.dashboard-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    height: 100%;
+}
+
+/* --- Left Panel (Sidebar) --- */
+.dashboard-sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+    padding-right: 5px;
+    /* Increased gap to fill vertical space */
+    gap: 2rem; 
+}
+
+/* --- Right Panel (Workspace) --- */
+.dashboard-main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* --- Card Styling --- */
+.card {
+    background: var(--card-bg);
+    border-radius: 12px; /* Softer corners */
+    padding: 2.5rem; /* Increased padding to fill space */
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.assignments-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.card h2 {
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin: 0 0 1.8rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #f0f0f0;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+/* --- Form Elements --- */
+.form-group { margin-bottom: 1.8rem; /* More space between inputs */ }
+
+.form-group label { 
+    display: block; 
+    font-size: 1rem; 
+    font-weight: 700; 
+    margin-bottom: 0.6rem; 
+    color: var(--text-secondary); 
+}
+
+.form-group input[type="text"] {
+    width: 100%; 
+    padding: 15px; /* Taller inputs */
+    border: 1px solid var(--input-border);
+    border-radius: 8px; 
+    font-size: 1.05rem; 
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus { outline: none; border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1); }
+
+/* Checkboxes */
+.checkbox-group { display: flex; flex-direction: column; gap: 18px; /* Spaced out */ }
+
+.checkbox-label { 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+    font-size: 1.05rem; 
+    cursor: pointer; 
+    padding: 5px 0; 
+    color: var(--text-main);
+}
+
+.checkbox-label input { 
+    accent-color: var(--primary-color); 
+    width: 20px; height: 20px; 
+    transform: scale(1.1); 
+    cursor: pointer;
+}
+
+.divider { height: 1px; background: var(--border-color); margin: 15px 0; }
+
+/* --- Assignment List --- */
+.grid-assignments {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    overflow-y: auto;
+    padding-right: 10px;
+    padding-bottom: 1.5rem;
+}
+
+.row-group {
+    background: #f8f9fa;
+    border: 1px solid #e1e4e8;
+    border-radius: 10px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s;
+}
+
+.row-group:hover { border-color: #b3d7ff; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+
+.row-inputs-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; 
+    gap: 30px; 
+    align-items: end;
+}
+
+.field-wrapper label { 
+    font-size: 0.9rem; 
+    font-weight: 700; 
+    color: #7f8c8d; 
+    text-transform: uppercase; 
+    margin-bottom: 10px; 
+    display: block; 
+}
+
+.input-with-code { display: flex; gap: 12px; }
+.input-with-code input[list] { flex-grow: 1; }
+.input-with-code .code-input { width: 80px; text-align: center; border-color: #ff9800; background: #fffcf0; font-weight: bold; }
+
+.grid-assignments input, .grid-assignments select {
+    width: 100%; 
+    padding: 14px; 
+    border: 1px solid var(--input-border);
+    border-radius: 8px; 
+    font-size: 1rem; 
+    background: white; 
+    box-sizing: border-box;
+}
+
+.add-btn-wrapper { margin-top: 10px; }
+.btn-add {
+    width: 100%; padding: 16px; background: white; border: 2px dashed #cbd5e0;
+    color: var(--text-secondary); border-radius: 8px; font-weight: 700; cursor: pointer;
+    transition: all 0.2s; font-size: 1rem;
+}
+.btn-add:hover { border-color: var(--primary-color); color: var(--primary-color); background: #f0f7ff; }
+
+/* --- Action Area --- */
+.action-area { 
+    margin-top: auto; /* Push to bottom of container */
+    padding-top: 2rem; 
+}
+
+.btn-generate {
+    width: 100%; 
+    padding: 20px; /* Big button */
+    background-color: var(--success-color); 
+    color: white;
+    border: none; 
+    border-radius: 10px; 
+    font-size: 1.3rem; 
+    font-weight: 700; 
+    letter-spacing: 0.5px;
+    cursor: pointer; 
+    transition: background 0.2s; 
+    box-shadow: 0 6px 10px rgba(40, 167, 69, 0.25);
+}
+.btn-generate:hover { background-color: var(--success-hover); transform: translateY(-2px); }
+
+.hidden { display: none !important; }
+/* Responsive demo layout */
+@media (max-width: 900px) {
+ body {height:auto; overflow:auto} .navbar {padding:1rem;height:auto;flex-wrap:wrap}
+ .navbar .tagline {margin:0;border:0;padding:0} .app-container {padding:1rem;height:auto}
+ .dashboard-layout {grid-template-columns:1fr;gap:1rem;height:auto}
+ .dashboard-sidebar,.dashboard-main,.assignments-card {height:auto;overflow:visible}
+ .card {padding:1rem} .row-inputs-container {grid-template-columns:1fr;gap:1rem}
+}

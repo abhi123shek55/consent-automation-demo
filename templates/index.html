@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consent XML Generator</title>
+    <link rel="stylesheet" href="/static/style.css?v=5">
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="brand">Consent XML Generator</div>
+        <div class="tagline">Automation Dashboard</div>
+    </nav>
+
+    <div class="app-container">
+        <p style="margin:0 0 12px">Demo template • Placeholder contacts • External API and email actions disabled.</p>
+        <form id="consent-form" action="/generate" method="post">
+            
+            <div class="dashboard-layout">
+                
+                <aside class="dashboard-sidebar">
+                    
+                    <div class="card project-card">
+                        <h2>Project Details</h2>
+                        <div class="form-group">
+                            <button type="button" onclick="loadSample()">Try sample project</button><label>Project Name</label>
+                            <input type="text" id="project-name" name="project_name" value="Consent_Project_Template" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Project Number</label>
+                            <input type="text" id="project-number" name="project_number" value="PN12345" required>
+                        </div>
+                        <div class="form-group">
+                            <label>The purpose of our study is to</label>
+                            <input type="text" id="study-purpose" name="study_purpose" placeholder="e.g. discuss Name of the project" required>
+                        </div>
+                    </div>
+
+                    <div class="card settings-card">
+                        <h2>Settings</h2>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label"><input type="checkbox" id="audio-recording" name="audio_recording"> Enable Audio Recording Clause (S2)</label>
+                            <label class="checkbox-label"><input type="checkbox" id="re-contact" name="re_contact" checked> Enable Re-contact Clause (S3)</label>
+                            <label class="checkbox-label"><input type="checkbox" id="adverse-events" name="adverse_events" checked> Enable Adverse Events Clause</label>
+                            </div>
+                    </div>
+
+                    <div class="action-area">
+                        <button type="submit" class="btn-generate">Generate XML File</button>
+                    </div>
+                </aside>
+
+                <main class="dashboard-main">
+                    <div class="card assignments-card">
+                        <div class="card-header">
+                            <h2>Country & POC Assignment</h2>
+                            <p class="hint-text">Select up to 5 countries. If entering a new country, please provide its 2-letter code.</p>
+                        </div>
+
+                        <div class="grid-assignments">
+                            
+                            <div class="row-group">
+                                <div class="row-inputs-container">
+                                    <div class="field-wrapper">
+                                        <label>Country 1</label>
+                                        <div class="input-with-code">
+                                            <input list="country-list" id="country1" name="country1" placeholder="Search..." required>
+                                            <input type="text" id="country_code1" name="country_code1" class="code-input hidden" placeholder="Code" maxlength="2">
+                                        </div>
+                                    </div>
+                                    <div class="field-wrapper">
+                                        <label>Point of Contact 1</label>
+                                        <select id="poc1" name="poc1" required>
+                                            <option value="" disabled selected>-- Select --</option>
+                                            <option value="Contact 1">Contact 1</option>
+                                            <option value="Contact 2">Contact 2</option>
+                                            <option value="Contact 3">Contact 3</option>
+                                            <option value="Contact 4">Contact 4</option>
+                                            <option value="Contact 5">Contact 5</option>
+                                            <option value="Contact 6">Contact 6</option>
+                                            <option value="Contact 7">Contact 7</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="row2" class="row-group hidden">
+                                <div class="row-inputs-container">
+                                    <div class="field-wrapper">
+                                        <label>Country 2</label>
+                                        <div class="input-with-code">
+                                            <input list="country-list" id="country2" name="country2" placeholder="Search...">
+                                            <input type="text" id="country_code2" name="country_code2" class="code-input hidden" placeholder="Code" maxlength="2">
+                                        </div>
+                                    </div>
+                                    <div class="field-wrapper">
+                                        <label>Point of Contact 2</label>
+                                        <select id="poc2" name="poc2">
+                                            <option value="" disabled selected>-- Select --</option>
+                                            <option value="Contact 1">Contact 1</option>
+                                            <option value="Contact 2">Contact 2</option>
+                                            <option value="Contact 3">Contact 3</option>
+                                            <option value="Contact 4">Contact 4</option>
+                                            <option value="Contact 5">Contact 5</option>
+                                            <option value="Contact 6">Contact 6</option>
+                                            <option value="Contact 7">Contact 7</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="row3" class="row-group hidden">
+                                <div class="row-inputs-container">
+                                    <div class="field-wrapper">
+                                        <label>Country 3</label>
+                                        <div class="input-with-code">
+                                            <input list="country-list" id="country3" name="country3" placeholder="Search...">
+                                            <input type="text" id="country_code3" name="country_code3" class="code-input hidden" placeholder="Code" maxlength="2">
+                                        </div>
+                                    </div>
+                                    <div class="field-wrapper">
+                                        <label>Point of Contact 3</label>
+                                        <select id="poc3" name="poc3">
+                                            <option value="" disabled selected>-- Select --</option>
+                                            <option value="Contact 1">Contact 1</option>
+                                            <option value="Contact 2">Contact 2</option>
+                                            <option value="Contact 3">Contact 3</option>
+                                            <option value="Contact 4">Contact 4</option>
+                                            <option value="Contact 5">Contact 5</option>
+                                            <option value="Contact 6">Contact 6</option>
+                                            <option value="Contact 7">Contact 7</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="row4" class="row-group hidden">
+                                <div class="row-inputs-container">
+                                    <div class="field-wrapper">
+                                        <label>Country 4</label>
+                                        <div class="input-with-code">
+                                            <input list="country-list" id="country4" name="country4" placeholder="Search...">
+                                            <input type="text" id="country_code4" name="country_code4" class="code-input hidden" placeholder="Code" maxlength="2">
+                                        </div>
+                                    </div>
+                                    <div class="field-wrapper">
+                                        <label>Point of Contact 4</label>
+                                        <select id="poc4" name="poc4">
+                                            <option value="" disabled selected>-- Select --</option>
+                                            <option value="Contact 1">Contact 1</option>
+                                            <option value="Contact 2">Contact 2</option>
+                                            <option value="Contact 3">Contact 3</option>
+                                            <option value="Contact 4">Contact 4</option>
+                                            <option value="Contact 5">Contact 5</option>
+                                            <option value="Contact 6">Contact 6</option>
+                                            <option value="Contact 7">Contact 7</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="row5" class="row-group hidden">
+                                <div class="row-inputs-container">
+                                    <div class="field-wrapper">
+                                        <label>Country 5</label>
+                                        <div class="input-with-code">
+                                            <input list="country-list" id="country5" name="country5" placeholder="Search...">
+                                            <input type="text" id="country_code5" name="country_code5" class="code-input hidden" placeholder="Code" maxlength="2">
+                                        </div>
+                                    </div>
+                                    <div class="field-wrapper">
+                                        <label>Point of Contact 5</label>
+                                        <select id="poc5" name="poc5">
+                                            <option value="" disabled selected>-- Select --</option>
+                                            <option value="Contact 1">Contact 1</option>
+                                            <option value="Contact 2">Contact 2</option>
+                                            <option value="Contact 3">Contact 3</option>
+                                            <option value="Contact 4">Contact 4</option>
+                                            <option value="Contact 5">Contact 5</option>
+                                            <option value="Contact 6">Contact 6</option>
+                                            <option value="Contact 7">Contact 7</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="add-btn-wrapper">
+                                <button type="button" id="add-country-btn" class="btn-add">+ Add Another Country</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </main>
+            </div>
+
+            <datalist id="country-list">
+                <option value="Germany"></option>
+                <option value="Spain"></option>
+                <option value="France"></option>
+                <option value="United Kingdom"></option>
+                <option value="Italy"></option>
+                <option value="Netherlands"></option>
+                <option value="Belgium"></option>
+                <option value="Switzerland"></option>
+                <option value="Austria"></option>
+                <option value="Portugal"></option>
+                <option value="Ireland"></option>
+                <option value="Denmark"></option>
+                <option value="Sweden"></option>
+                <option value="Norway"></option>
+                <option value="Finland"></option>
+                <option value="Poland"></option>
+                <option value="Romania"></option>
+                <option value="Bulgaria"></option>
+                <option value="Hungary"></option>
+                <option value="Greece"></option>
+                <option value="Turkey"></option>
+                <option value="Czechoslovakia"></option>
+                <option value="Slovakia"></option>
+                <option value="Canada"></option>
+                <option value="United States of America"></option>
+                <option value="Brazil"></option>
+                <option value="Antigua and Barbuda"></option>
+                <option value="Colombia"></option>
+                <option value="Chile"></option>
+                <option value="Mexico"></option>
+                <option value="Japan"></option>
+                <option value="Croatia"></option>
+                <option value="Serbia"></option>
+                <option value="Russia"></option>
+                <option value="UAE"></option>
+                <option value="Kuwait"></option>
+                <option value="Qatar"></option>
+                <option value="Argentina"></option>
+                <option value="Peru"></option>
+                <option value="KSA"></option>
+                <option value="Egypt"></option>
+                <option value="Jordan"></option>
+                <option value="Morocco"></option>
+                <option value="Taiwan"></option>
+                <option value="Lebanon"></option>
+                <option value="Bahrain"></option>
+                <option value="Oman"></option>
+            </datalist>
+            
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            const knownCountries = new Set();
+            document.querySelectorAll('#country-list option').forEach(opt => {
+                knownCountries.add(opt.value.toLowerCase());
+            });
+
+            const getAllCountryInputs = () => {
+                const inputs = [];
+                for (let i = 1; i <= 5; i++) {
+                    inputs.push(document.getElementById('country' + i));
+                }
+                return inputs;
+            };
+
+            function checkDuplicates() {
+                const inputs = getAllCountryInputs();
+                inputs.forEach(input => input.setCustomValidity(''));
+
+                for (let i = 0; i < inputs.length; i++) {
+                    const val1 = inputs[i].value.trim();
+                    if (val1 === "") continue;
+
+                    for (let j = i + 1; j < inputs.length; j++) {
+                        const val2 = inputs[j].value.trim();
+                        if (val2 === "") continue;
+
+                        if (val1.toLowerCase() === val2.toLowerCase()) {
+                            inputs[j].setCustomValidity("This country is already selected in another row.");
+                        }
+                    }
+                }
+            }
+
+            for (let i = 1; i <= 5; i++) {
+                const countryInput = document.getElementById('country' + i);
+                const codeInput = document.getElementById('country_code' + i);
+                const pocSelect = document.getElementById('poc' + i);
+
+                function validateRow() {
+                    const val = countryInput.value.trim();
+                    const hasData = val !== '' || pocSelect.value !== '';
+
+                    if (val !== "" && !knownCountries.has(val.toLowerCase())) {
+                        codeInput.classList.remove('hidden');
+                        codeInput.required = true;
+                    } else {
+                        codeInput.classList.add('hidden');
+                        codeInput.required = false;
+                        codeInput.value = ""; 
+                    }
+
+                    if (i === 1) {
+                        countryInput.required = true;
+                        pocSelect.required = true;
+                    } else {
+                        countryInput.required = hasData;
+                        pocSelect.required = hasData;
+                    }
+                    checkDuplicates();
+                }
+
+                countryInput.addEventListener('input', validateRow);
+                countryInput.addEventListener('change', validateRow);
+                pocSelect.addEventListener('change', validateRow);
+                validateRow();
+            }
+
+            const form = document.getElementById('consent-form');
+            form.addEventListener('submit', function(event) {
+                let hasError = false;
+                for (let i = 1; i <= 5; i++) {
+                    const countryInput = document.getElementById('country' + i);
+                    const codeInput = document.getElementById('country_code' + i);
+                    const val = countryInput.value.trim();
+                    
+                    if (val !== "" && !knownCountries.has(val.toLowerCase())) {
+                        if (codeInput.classList.contains('hidden')) {
+                            codeInput.classList.remove('hidden');
+                            codeInput.required = true;
+                            hasError = true;
+                        } else if (codeInput.value.trim() === "") {
+                            hasError = true;
+                        }
+                    }
+                }
+                if (hasError) {
+                    event.preventDefault();
+                    alert("New country detected. Please provide the 2-letter Country Code in the highlighted box(es).");
+                }
+            });
+
+            let currentCountryIndex = 2;
+            const addCountryBtn = document.getElementById('add-country-btn');
+
+            addCountryBtn.addEventListener('click', function() {
+                const countryGroup = document.getElementById('row' + currentCountryIndex);
+
+                if (countryGroup) {
+                    countryGroup.classList.remove('hidden');
+                    currentCountryIndex++;
+                    if (currentCountryIndex > 5) {
+                        addCountryBtn.style.display = 'none';
+                    }
+                }
+            });
+        });
+    </script>
+<script>
+function loadSample() {
+ document.getElementById('consent-form').reset();
+ document.getElementById('project-name').value = 'Demo Research Study';
+ document.getElementById('project-number').value = 'DEMO001';
+ document.getElementById('study-purpose').value = 'understand research participation preferences';
+ document.getElementById('country1').value = 'UAE';
+ document.getElementById('poc1').value = 'Contact 1';
+ document.getElementById('country1').dispatchEvent(new Event('input'));
+}
+</script></body>
+</html>
